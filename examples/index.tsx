@@ -1,29 +1,15 @@
 import G6 from '@antv/g6';
 import React, { useEffect } from 'react';
+import '../src/combinationNode/index';
 
 const Example = () => {
   // 定义数据源
   const data = {
-    // 点集
     nodes: [
-      {
-        id: 'node1',
-        x: 100,
-        y: 200,
-      },
-      {
-        id: 'node2',
-        x: 300,
-        y: 200,
-      },
-    ],
-    // 边集
-    edges: [
-      // 表示一条从 node1 节点连接到 node2 节点的边
-      {
-        source: 'node1',
-        target: 'node2',
-      },
+      { id: 'node1', x: 50, y: 100, type: 'diamond' }, // 最简单的
+      { id: 'node2', x: 150, y: 100, type: 'diamond', size: [50, 100] }, // 添加宽高
+      { id: 'node3', x: 250, y: 100, color: 'red', type: 'diamond' }, // 添加颜色
+      { id: 'node4', x: 350, y: 100, label: '菱形', type: 'diamond' }, // 附加文本
     ],
   };
 
